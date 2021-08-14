@@ -54,7 +54,7 @@ public class PanelComprasLider extends JPanel{
         public Class<?> getColumnClass(int columnIndex) {
             switch (columnIndex) {
                 case 0:
-                    return Integer.class;
+                    return String.class;
                 case 1:
                     return Double.class;
             }
