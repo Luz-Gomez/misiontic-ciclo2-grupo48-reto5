@@ -18,7 +18,6 @@ public class ConsultasController {
     private ComprasDeLiderDao comprasDeLiderDao;
     private BancosDao bancosDao;
 
-
     public ConsultasController() {
         proyectoBancoDao = new ProyectoBancoDao();
         pagadoPorProyectoDao = new PagadoPorProyectoDao();

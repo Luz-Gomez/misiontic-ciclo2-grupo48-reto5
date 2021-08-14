@@ -1,13 +1,14 @@
 package co.edu.utp.misiontic2022.c2;
 
-/**
- * Hello world!
- *
- */
+import co.edu.utp.misiontic2022.c2.view.FrmPrincipal;
+
+// Ajuste de la App para ejecutar a partir de las vistas
+
 public class App 
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        var vista = new FrmPrincipal();
+        vista.setVisible(true);
     }
 }
