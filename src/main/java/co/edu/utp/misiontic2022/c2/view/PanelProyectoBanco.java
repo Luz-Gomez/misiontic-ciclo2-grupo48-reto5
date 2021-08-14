@@ -39,8 +39,7 @@ public class PanelProyectoBanco extends JPanel {
         comboBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            label.setText(comboBox.getSelectedItem().toString());
-        }});
+            label.setText(comboBox.getSelectedItem().toString());}});
 
         var btnConsulta = new JButton("Consultar");
         btnConsulta.addActionListener(e -> consutarProyectosPorBanco(label.getText().trim()));
@@ -134,6 +133,7 @@ public class PanelProyectoBanco extends JPanel {
             return null;
         }
     }
+
     public void loadBancos() {
         // Trae los bancos del Controller y los carga en el ComboBox
         comboBox.addItem("");
