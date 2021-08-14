@@ -1,14 +1,4 @@
 package co.edu.utp.misiontic2022.c2.view;
-// Implementacion de vista para consulta de Proyectos por banco
-import java.awt.BorderLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.sql.SQLException;
-import java.util.List;
-import javax.swing.table.AbstractTableModel;
-
-import co.edu.utp.misiontic2022.c2.controller.ConsultasController;
-import co.edu.utp.misiontic2022.c2.model.vo.ProyectoBancoVo;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -17,18 +7,29 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.table.AbstractTableModel;
 
-public class PanelProyectoBanco extends JPanel {
+import java.awt.BorderLayout;
+import java.awt.event.ActionListener;
+import java.sql.SQLException;
+import java.util.List;
+import java.awt.event.ActionEvent;
+
+import co.edu.utp.misiontic2022.c2.controller.ConsultasController;
+import co.edu.utp.misiontic2022.c2.model.vo.ProyectoBancoVo;
+
+public class PanelProyectoPorBanco extends JPanel {
     private ConsultasController controller;
     private JTable tabla;
     private JComboBox<String> comboBox;
 
-    public PanelProyectoBanco() {
+    public PanelProyectoPorBanco() {
         controller = new ConsultasController();
 
         setLayout(new BorderLayout());
         var panelVariable = new JPanel();
-    
+        panelVariable.add(new JLabel(" xx "));
+
         var label = new JLabel("Seleccione un Banco   ");
         panelVariable.add(label);
 
@@ -37,13 +38,14 @@ public class PanelProyectoBanco extends JPanel {
         loadBancos(); 
         // Accion a realizar cuando el JComboBox cambia de item seleccionado.
         comboBox.addActionListener(new ActionListener() {
-            @Override
+           @Override
             public void actionPerformed(ActionEvent e) {
-            label.setText(comboBox.getSelectedItem().toString());}});
+            label.setText(comboBox.getSelectedItem().toString());
+        }});
 
+        //label.setText(comboBox.getSelectedItem().toString());
         var btnConsulta = new JButton("Consultar");
         btnConsulta.addActionListener(e -> consutarProyectosPorBanco(label.getText().trim()));
-        
         panelVariable.add(btnConsulta);
         add(panelVariable, BorderLayout.PAGE_START);
 
@@ -51,7 +53,7 @@ public class PanelProyectoBanco extends JPanel {
         add(new JScrollPane(tabla), BorderLayout.CENTER);
     }
 
-    private void consutarProyectosPorBanco(String dato){
+    private void consutarProyectosPorBanco(String dato) {
         try {
             var lista = controller.listaProyectoBanco(dato);
             var tableModel = new ProyectoTableModel();
@@ -62,7 +64,6 @@ public class PanelProyectoBanco extends JPanel {
                 JOptionPane.ERROR_MESSAGE);
         }
     }
-    
     private class ProyectoTableModel extends AbstractTableModel {
         private List<ProyectoBancoVo> data;
     
@@ -134,7 +135,7 @@ public class PanelProyectoBanco extends JPanel {
         }
     }
 
-    public void loadBancos() {
+    private void loadBancos() {
         // Trae los bancos del Controller y los carga en el ComboBox
         comboBox.addItem("");
         try {
@@ -142,9 +143,8 @@ public class PanelProyectoBanco extends JPanel {
             for (int i = 0; i < lista.size(); i++){
                 comboBox.addItem(lista.get(i).getBanco());
             }
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(this, e.getMessage(), getName(), 
-                JOptionPane.ERROR_MESSAGE);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, JOptionPane.ERROR_MESSAGE);
         }
-    }
+    }  
 }

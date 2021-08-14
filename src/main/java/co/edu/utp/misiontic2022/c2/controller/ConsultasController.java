@@ -1,5 +1,5 @@
 package co.edu.utp.misiontic2022.c2.controller;
-// Controlador para las consultas generadas en DAO
+
 import java.sql.SQLException;
 import java.util.List;
 
@@ -19,9 +19,11 @@ public class ConsultasController {
     private BancosDao bancosDao;
 
     public ConsultasController() {
+
         proyectoBancoDao = new ProyectoBancoDao();
         pagadoPorProyectoDao = new PagadoPorProyectoDao();
         comprasDeLiderDao = new ComprasDeLiderDao();
+        bancosDao = new BancosDao();
     }
 
     public List<ProyectoBancoVo> listaProyectoBanco(String banco) throws SQLException {
@@ -34,7 +36,7 @@ public class ConsultasController {
 
     public List<ComprasDeLiderVo> listaComprasDeLider() throws SQLException {
         return comprasDeLiderDao.consultaComprasDelLider();
-    }    
+    }
 
     public List<BancosVo> listaBancos() throws SQLException {
         return bancosDao.consultaBancos();

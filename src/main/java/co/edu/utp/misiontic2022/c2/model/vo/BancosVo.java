@@ -13,6 +13,6 @@ public class BancosVo {
 
     @Override
     public String toString() {
-        return "Bancos [banco=" + banco + "]";
-    }
+        return "BancosVo [banco=" + banco + "]";
+    }  
 }

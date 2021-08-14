@@ -8,11 +8,11 @@ import javax.swing.JTabbedPane;
 public class FrmPrincipal extends JFrame{
     PanelComprasLider panelComprasLider;
     PanelPagoPorProyecto panelPagoPorProyecto;
-    PanelProyectoBanco panelProyectoBanco;
+    PanelProyectoPorBanco panelProyectoPorBanco;
     JTabbedPane carpetas;
 
     public FrmPrincipal() {
-        setTitle("Misión TIC 2022 UTP - Reto 5");
+        setTitle("Misión TIC 2022 UTP - Ciclo 2 Grupo 48 - Reto 5");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(800, 600);
         setLocationRelativeTo(null);
@@ -21,11 +21,11 @@ public class FrmPrincipal extends JFrame{
 
     private void iniciarComponentes(){
         carpetas = new JTabbedPane();
-        panelProyectoBanco = new PanelProyectoBanco();
+        panelProyectoPorBanco = new PanelProyectoPorBanco();
         panelPagoPorProyecto = new PanelPagoPorProyecto();
         panelComprasLider = new PanelComprasLider();
 
-        carpetas.add("Listado de Proyectos por Banco", panelProyectoBanco);
+        carpetas.add("Listado de Proyectos por Banco", panelProyectoPorBanco);
         carpetas.add("Total Pagado por Proyecto", panelPagoPorProyecto);
         carpetas.add("Los 10 Lideres Menos Compradores", panelComprasLider);
 
