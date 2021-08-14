@@ -22,7 +22,7 @@ public class PanelComprasLider extends JPanel{
 
         setLayout(new BorderLayout());
         var panelVariable = new JPanel();
-    //    panelVariable.add(new JLabel("Digite Limite Inferior   "));
+    
         var btnConsulta = new JButton("Consultar 10 Lideres con las Menores Compras");
         btnConsulta.addActionListener(e -> consultarComprasLider());
         panelVariable.add(btnConsulta);

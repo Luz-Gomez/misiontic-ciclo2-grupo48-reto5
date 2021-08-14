@@ -1,5 +1,5 @@
 package co.edu.utp.misiontic2022.c2.view;
-
+// Consultas a mostrar por consola
 import java.sql.SQLException;
 
 import co.edu.utp.misiontic2022.c2.controller.ConsultasController;

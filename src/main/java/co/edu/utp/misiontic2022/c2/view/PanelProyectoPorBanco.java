@@ -28,7 +28,7 @@ public class PanelProyectoPorBanco extends JPanel {
 
         setLayout(new BorderLayout());
         var panelVariable = new JPanel();
-        panelVariable.add(new JLabel(" xx "));
+        //panelVariable.add(new JLabel(" xx "));
 
         var label = new JLabel("Seleccione un Banco   ");
         panelVariable.add(label);
@@ -43,12 +43,11 @@ public class PanelProyectoPorBanco extends JPanel {
             label.setText(comboBox.getSelectedItem().toString());
         }});
 
-        //label.setText(comboBox.getSelectedItem().toString());
         var btnConsulta = new JButton("Consultar");
         btnConsulta.addActionListener(e -> consutarProyectosPorBanco(label.getText().trim()));
         panelVariable.add(btnConsulta);
         add(panelVariable, BorderLayout.PAGE_START);
-
+        
         tabla = new JTable();
         add(new JScrollPane(tabla), BorderLayout.CENTER);
     }
