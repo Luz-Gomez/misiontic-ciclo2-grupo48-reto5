@@ -26,7 +26,8 @@ public class PanelPagoPorProyecto extends JPanel{
         setLayout(new BorderLayout());
         var panelVariable = new JPanel();
         panelVariable.add(new JLabel("Digite Limite Inferior   "));
-        var txtLimite = new JTextField(15);
+        var txtLimite = new JTextField(10);
+        txtLimite.setHorizontalAlignment(JTextField.TRAILING);
         panelVariable.add(txtLimite);
         var btnConsulta = new JButton("Consultar");
         btnConsulta.addActionListener(e -> consutarPagoPorProyecto(

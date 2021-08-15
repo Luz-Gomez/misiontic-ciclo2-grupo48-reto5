@@ -1,6 +1,7 @@
 package co.edu.utp.misiontic2022.c2.view;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JTabbedPane;
 
 // Frame principal que va a contener las carpetas de las consultas 
@@ -30,5 +31,10 @@ public class FrmPrincipal extends JFrame{
         carpetas.add("Los 10 Lideres Menos Compradores", panelComprasLider);
 
         add(carpetas);
+
+        var mensaje = "MisionTIC UTP Ciclo 2 Grupo 48 - Profesor Cesar Diaz - " +
+                        "Autora Luz Aracely Gomez Torrente";
+
+        JOptionPane.showMessageDialog (this, mensaje);
     }
 }
